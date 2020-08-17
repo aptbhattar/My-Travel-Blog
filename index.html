@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <title>My Travel Blog</title>
+</head>
+<body>
+    <div class="main" id="home">
+        <nav>
+        <header>
+        <div class= "logo"><a href="#home"><img src="travel.png"></a></div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    </header>
+    </nav>
+    <div class="tagline"><p>Welcome to Arpit's Travel Blog</p></div>
+    <h1 class="content_heading"></h1>
+    <form>
+        <center>
+        <h1 class="search">Search the Blog</h1> <br>
+        <input type="search" id="search" required class="input" maxlength="10" placeholder="Search here"><br>
+        <input type="submit" id="submit" class="submit" value="Search">
+        </center>
+    </form>
+    <script>
+        var name = prompt("Please enter your name!") 
+        var datetoday = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+        var day = weekday[datetoday.getDay()];
+        var hr = datetoday.getHours();
+        var min = datetoday.getMinutes();
+        var sec = datetoday.getSeconds();
+        if (min < 10) {
+            min = "0" + min;
+        }
+        var ampm = "AM";
+        if( hr > 12 ) {
+            hr -= 12;
+            ampm = "PM";
+        }
+        var time = hr + ' : ' + min + ' : ' + sec + ' ' + ampm ;
+        var title = document.querySelector('.content_heading');
+        title.innerHTML= "Hello " + name + '! Welcome, Time is ' + time + ' and day is ' + day + '.';
+    </script>
+    </div>
+    <div id="blogs">
+    <div class= "a1">
+    <div>
+        <h1 class="blogs">London</h1>
+        <h5 id="London">Commodo labore duis qui magna consectetur ea nisi enim. Esse irure quis elit occaecat laborum adipisicing ut veniam quis aliqua deserunt dolor elit. Culpa deserunt dolore proident anim magna deserunt nostrud cillum exercitation amet incididunt aliquip aliqua. Eiusmod ex nostrud in sunt et commodo consectetur reprehenderit cillum laboris. Velit dolor sit laboris occaecat excepteur esse. Nostrud proident ut laboris ex consequat. Laboris consectetur laborum nostrud proident cupidatat amet tempor.</h5>
+    </div>
+        <div class="blog"><img src="2.jpg"></div>
+    </div>
+    <div class= "a1">
+        <div class="blog"><img src="3.jpg"></div>
+        <div>
+            <h1 class="blogs">Paris</h1>
+            <h5 id="Paris">Commodo labore duis qui magna consectetur ea nisi enim. Esse irure quis elit occaecat laborum adipisicing ut veniam quis aliqua deserunt dolor elit. Culpa deserunt dolore proident anim magna deserunt nostrud cillum exercitation amet incididunt aliquip aliqua. Eiusmod ex nostrud in sunt et commodo consectetur reprehenderit cillum laboris. Velit dolor sit laboris occaecat excepteur esse. Nostrud proident ut laboris ex consequat. Laboris consectetur laborum nostrud proident cupidatat amet tempor.</h5>
+        </div>
+        </div>
+    <div class= "a1">
+    <div>
+        <h1 class="blogs">Los Angeles</h1>
+        <h5 id="Los Angeles">Commodo labore duis qui magna consectetur ea nisi enim. Esse irure quis elit occaecat laborum adipisicing ut veniam quis aliqua deserunt dolor elit. Culpa deserunt dolore proident anim magna deserunt nostrud cillum exercitation amet incididunt aliquip aliqua. Eiusmod ex nostrud in sunt et commodo consectetur reprehenderit cillum laboris. Velit dolor sit laboris occaecat excepteur esse. Nostrud proident ut laboris ex consequat. Laboris consectetur laborum nostrud proident cupidatat amet tempor.</h5>
+    </div>
+        <div class="blog"><img src="4.jpg"></div>
+    </div>
+    <div class= "a1">
+        <div class="blog"><img src="5.jpg"></div>
+        <div>
+            <h1 class="blogs">Tokyo</h1>
+            <h5 id="Tokyo">Commodo labore duis qui magna consectetur ea nisi enim. Esse irure quis elit occaecat laborum adipisicing ut veniam quis aliqua deserunt dolor elit. Culpa deserunt dolore proident anim magna deserunt nostrud cillum exercitation amet incididunt aliquip aliqua. Eiusmod ex nostrud in sunt et commodo consectetur reprehenderit cillum laboris. Velit dolor sit laboris occaecat excepteur esse. Nostrud proident ut laboris ex consequat. Laboris consectetur laborum nostrud proident cupidatat amet tempor.</h5>
+        </div>
+        </div>
+        <br>
+        <hr>
+        <div class="subscribe">
+        <h1 class="subs">Subscribe</h1>
+        <br>
+        <form action=#>
+            <center>
+              <label for="email">Email Id:</label><br>
+              <input type="text" id="email" name="email" placeholder="abc@xyz.com"><br>
+              <label for="phone">Phone number:</label><br>
+              <input type="text" id="phone" name="phone" placeholder="XXXXXXXXXX"><br>
+              <input type="submit" id="subscribe" value="Subscribe">
+            </center>
+          </form>
+        </div>
+    </div><br>
+    <script>
+        var subscribe = document.querySelector("#subscribe")
+        var email = document.querySelector("#email")
+        var phone = document.querySelector("#phone")
+
+        subscribe.addEventListener('click', () => {
+            var pattern = /^[0-9]+$/;
+            if(phone.value.match(pattern)){
+                var msg = "Thanks for subscribing! You will receive the latest updates from us at " + email.value;
+                alert(msg)
+            }
+            else{
+                var msg = "Please enter only numeric values";
+                alert(msg)
+            }
+        })
+    </script>    
+        <hr>
+        <div class="a2">
+        <section style="border:2px solid #62e266;padding:25px;margin-bottom: 50px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/Qmi-Xwq-MEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+        <div class="contact" id="contact">
+            <form action=#>
+            <center>
+              <label for="fname">First name:</label><br>
+              <input type="text" id="fname" name="fname" placeholder="Sanjay"><br>
+              <label for="lname">Last name:</label><br>
+              <input type="text" id="lname" name="lname" placeholder="Fernandez"><br>
+              <label for="email">Email:</label><br>
+              <input type="text" id="email" name="email" placeholder="abc@gmail.com"><br>
+              <label for="phone">Phone number:</label><br>
+              <input type="text" id="phone" name="phone" maxlength="10" minlength="10" placeholder="XXXXXXXXXX"><br>
+              <input type="submit" id="submit" class="submit" value="Submit">
+              <input type="reset" value="Reset">
+            </center>
+          </form>
+        </div>
+    </div>
+    <script>
+        var phone = document.querySelector("#phone")
+        var submit = document.querySelector("#submit")
+        submit.addEventListener('click', () => {
+            var pattern = /^[0-9]+$/;
+            if(phone.value.match(pattern))
+            {
+            alert('Your form has been submitted successfully!');
+            }
+            else
+            {
+            alert('Only numeric characters are allowed');
+            }
+        })
+    </script>
+</body>
+</html>
