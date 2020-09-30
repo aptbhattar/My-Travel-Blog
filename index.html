@@ -28,14 +28,7 @@
     <script>
         var name = prompt("Please enter your name!") 
         var datetoday = new Date();
-        var weekday = new Array(7);
-        weekday[0] = "Sunday";
-        weekday[1] = "Monday";
-        weekday[2] = "Tuesday";
-        weekday[3] = "Wednesday";
-        weekday[4] = "Thursday";
-        weekday[5] = "Friday";
-        weekday[6] = "Saturday";
+        var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         var day = weekday[datetoday.getDay()];
         var hr = datetoday.getHours();
         var min = datetoday.getMinutes();
